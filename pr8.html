@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 320px;
+            box-shadow: 0 2px 12px #ccc
+        }
+
+        h2 {
+            text-align: center;
+            color: #222
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 11px;
+            margin: 9px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 15px
+        }
+
+        button:hover {
+            background: #1d4ed8
+        }
+
+        #result {
+            text-align: center;
+            line-height: 1.8
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Student Registration</h2>
+        <form id="regForm">
+            <input type="text" id="name" placeholder="Enter Full Name" required>
+            <input type="text" id="college" placeholder="Enter College Name" required>
+            <select id="dept" required>
+                <option value="">Select Department</option>
+                <option>Information Technology</option>
+                <option>Computer Engineering</option>
+                <option>Computer Science</option>
+                <option>Electronics</option>
+                <option>Mechanical</option>
+                <option>Civil</option>
+            </select>
+            <button type="submit">Register</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        document.getElementById("regForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            let name = document.getElementById("name").value;
+            let college = document.getElementById("college").value;
+            let dept = document.getElementById("dept").value;
+            document.getElementById("regForm").style.display = "none";
+            document.getElementById("result").innerHTML = "<h3 style='color:green'>Registration Successful!</h3><p><b>Name:</b> " + name + "</p><p><b>College:</b> " + college + "</p><p><b>Department:</b> " + dept + "</p>";
+        });
+    </script>
+</body>
+
+</html>
